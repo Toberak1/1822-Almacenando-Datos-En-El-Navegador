@@ -13,9 +13,9 @@ const deleteTask = (id) => {
   const li = document.querySelector('[data-list]');
   const task = JSON.parse(localStorage.getItem('task'));
   const index = task.findIndex( (item) => item.id === id);
-  console.log(index);
+
   task.splice(index,1);
-  console.log(task);
+
   li.innerHTML = '';
   localStorage.setItem("task", JSON.stringify(task));
   displayTasks();
